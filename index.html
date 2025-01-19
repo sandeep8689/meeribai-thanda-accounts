@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEERIBAI THANDA ACCOUNTS</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include jsPDF from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>MEERIBAI THANDA ACCOUNTS</h1>
+
+        <!-- Form to Add Customer Details -->
+        <div class="form-container">
+            <h2>Add Customer</h2>
+            <form id="customer-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="father-name">Father's Name:</label>
+                <input type="text" id="father-name" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" required>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+
+                <!-- Interest Rate Calculation (Optional) -->
+                <label for="interest-calculator-checkbox">Include Interest Calculation:</label>
+                <input type="checkbox" id="interest-calculator-checkbox">
+
+                <div id="interest-fields" style="display:none;">
+                    <label for="principal">Principal Amount:</label>
+                    <input type="number" id="principal" placeholder="Enter principal amount">
+
+                    <label for="rate">Rate of Interest (%):</label>
+                    <input type="number" id="rate" placeholder="Enter interest rate">
+
+                    <label for="start-date">Interest Start Date:</label>
+                    <input type="date" id="start-date">
+
+                    <label for="end-date">Interest End Date:</label>
+                    <input type="date" id="end-date">
+                </div>
+
+                <!-- Other Options (Optional) -->
+                <label for="other-options">Other Options (Optional):</label>
+                <textarea id="other-options" placeholder="Enter any additional details about the customer"></textarea>
+
+                <button type="submit">Add Customer</button>
+            </form>
+        </div>
+
+        <!-- Display Customer List -->
+        <div class="customer-list">
+            <h2>Customer List</h2>
+            <ul id="customer-list">
+                <!-- Customer details will be listed here -->
+            </ul>
+        </div>
+
+        <div class="actions">
+            <p id="total-members">Total Members: 0</p>
+            <p id="total-amount">Total Amount: $0.00</p>
+            
+            <button id="generate-pdf-btn">Generate PDF</button>
+        </div>
+
+        <!-- Current Time Display -->
+        <div class="time-container">
+            <h2>Current Time</h2>
+            <p id="current-time"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
